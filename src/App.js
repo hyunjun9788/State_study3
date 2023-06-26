@@ -1,20 +1,23 @@
-
 import './App.css';
 import {useState} from "react";
+import Input from "./components/Input";
+import Content from "./components/Content";
+import './components/Input.css'
 
 function App() {
 
-  const [input,setInput] = useState('')
+    const [input, setInput] = useState('')
 
-  const inputChangeHandler = (e) =>{
-    setInput(e.target.value)
-  }
-  return (
-    <div className="App">
-    <input onChange={inputChangeHandler}/>
-      <div className='content'>입력값: {input}</div>
-    </div>
-  );
+    const inputChangeHandler = (e) => {
+        setInput(e.target.value)
+    }
+    return (
+        <div className="App">
+            <Input inputChangeHandler={inputChangeHandler}/>
+            <Content input={input}/>
+
+        </div>
+    );
 }
 
 export default App;
